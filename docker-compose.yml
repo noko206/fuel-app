@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  app:
+    container_name: fuel-app
+    build: ./docker/app
+    volumes:
+      - ./docker/app/php.ini:/usr/local/etc/php/php.ini
+      - ./src:/var/www
+    working_dir: /var/www
+    ports:
+      - "8080:8080"
+    command: "php -S 0.0.0.0:8080 -t public"
+
+  db:
+    image: mysql:5.7
+    container_name: fuel-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fuel
+      MYSQL_PASSWORD: root
+      TZ: 'Asia/Tokyo'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - ./docker/db/data:/var/lib/mysql
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/db/sql:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
