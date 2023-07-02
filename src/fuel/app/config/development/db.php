@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Fuel is a fast, lightweight, community driven PHP 5.4+ framework.
  *
@@ -22,7 +23,7 @@
 return array(
 	'default' => array(
 		'connection' => array(
-			'dsn'      => 'mysql:host=localhost;dbname=fuel_dev',
+			'dsn'      => 'mysql:host=fuel-db;dbname=fuel',
 			'username' => 'root',
 			'password' => 'root',
 		),

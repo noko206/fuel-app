@@ -36,3 +36,16 @@ fuel-app内に入って↓を叩く
 ■ phpstan.neonを通すコマンド
 
 ./fuel/vendor/bin/phpstan analyse -c phpstan.neon ./fuel/app/classes
+
+■ MySQLに接続できない
+
+phpinfo()のPDO driversにmysqlがなければそれが原因。
+pdo_mysqlなどをインストールする必要があるが、
+ベースイメージがAlpineだとdocker-php-ext-installを使うとエラーになるっぽい。
+install-php-extensionsを使うことで解決。
+
+参考：https://zenn.dev/pp_dev/scraps/dbb2ce2a489a03
+
+■ FuelPHPでマイグレーションを使う方法
+
+https://mintaku-blog.net/fuelphp-migration/
