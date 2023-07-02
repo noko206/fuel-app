@@ -13,7 +13,17 @@ class Controller_User_Boards extends Controller_User_Base
 	 */
 	public function get_index(): void
 	{
-		$this->template->set('main', View::forge('user/boards/index'));
+		// 掲示板一覧を取得
+		$boards = Model_Board::forge()->find('all', [
+			'order_by' => ['created_at' => 'desc'],
+		]);
+
+		// Viewに渡すデータ
+		$data = [
+			'boards' => $boards,
+		];
+
+		$this->template->set('main', View::forge('user/boards/index', (object)$data));
 	}
 
 	/**
@@ -48,7 +58,7 @@ class Controller_User_Boards extends Controller_User_Base
 				'description' => $post['description'] ?? '',
 				'errors'      => $validation->error(),
 			];
-			$this->template->set('main', View::forge('user/boards/create', $data));
+			$this->template->set('main', View::forge('user/boards/create', (object)$data));
 			return;
 		}
 
@@ -70,6 +80,6 @@ class Controller_User_Boards extends Controller_User_Base
 			'board_id' => $board->id,
 		];
 
-		$this->template->set('main', View::forge('user/boards/store', $data));
+		$this->template->set('main', View::forge('user/boards/store', (object)$data));
 	}
 }
