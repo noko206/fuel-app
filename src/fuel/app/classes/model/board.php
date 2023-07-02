@@ -4,8 +4,13 @@ use Orm\Model;
 
 class Model_Board extends Model
 {
+	/** @var string テーブル名 */
 	protected static $_table_name = 'boards';
 
+	/** @var string[] プライマリーキー */
+	protected static $_primary_key = ['id'];
+
+	/** @var array<string, array<string, mixed>> プロパティ */
 	protected static $_properties = [
 		'id' => [
 			'data_type' => 'int',
@@ -29,17 +34,9 @@ class Model_Board extends Model
 		],
 		'created_at' => [
 			'date_type' => 'datetime',
-			'validation' => [
-				'required',
-			],
 		],
 		'updated_at' => [
 			'date_type' => 'datetime',
-			'validation' => [
-				'required',
-			],
 		],
 	];
-
-	protected static $_primary_key = ['id'];
 }

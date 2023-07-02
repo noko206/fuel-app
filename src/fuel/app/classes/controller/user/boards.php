@@ -1,5 +1,6 @@
 <?php
 
+use Fuel\Core\Fieldset;
 use Fuel\Core\Input;
 use Fuel\Core\Validation;
 use Fuel\Core\View;
@@ -41,29 +42,28 @@ class Controller_User_Boards extends Controller_User_Base
 	 *
 	 * @return void
 	 */
-	public function post_store(): void
+	public function post_create(): void
 	{
 		// POST値を取得
-		$post = Input::post();
+		/** @var array<string, string> */
+		$post = Input::forge()->post();
 
 		// バリデーション
-		$validation = Validation::forge();
-		$validation->add_field('title', 'title', 'required|max_length[60]');
-		$validation->add_field('description', 'description', 'required|max_length[200]');
+		$board  = Model_Board::forge();
+		$fields = Fieldset::forge()->add_model($board);
 
 		// バリデーションに失敗したら新規掲示板作成ページに戻る
-		if (!$validation->run()) {
+		if (!$fields->validation()->run()) {
 			$data = [
 				'title'       => $post['title'] ?? '',
 				'description' => $post['description'] ?? '',
-				'errors'      => $validation->error(),
+				'errors'      => $fields->validation()->error(),
 			];
 			$this->template->set('main', View::forge('user/boards/create', (object)$data));
 			return;
 		}
 
 		// 新規掲示板をDBに登録
-		$board = Model_Board::forge();
 		$now = (new DateTime)->format('Y-m-d H:i:s');
 
 		$insert_data = [

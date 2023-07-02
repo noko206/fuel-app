@@ -2,7 +2,7 @@
 	<p>新規掲示板作成ページです。</p>
 </div>
 <div>
-	<form action="/boards/store" method="post">
+	<form action="/boards/create" method="post">
 		<dl>
 			<dt>タイトル</dt>
 			<dd><input type="text" name="title"></dd>
