@@ -6,8 +6,8 @@ services:
     build: ./docker/app
     volumes:
       - ./docker/app/php.ini:/usr/local/etc/php/php.ini
-      - ./src:/var/www
-    working_dir: /var/www
+      - ./src:/var/www/src
+    working_dir: /var/www/src
     ports:
       - "8080:8080"
     command: "php -S 0.0.0.0:8080 -t public"

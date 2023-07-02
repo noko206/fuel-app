@@ -27,3 +27,12 @@ https://blog.logical.co.jp/entry/2021/01/12/100000
 
 こっちが参考になりそう！
 https://stackoverflow.com/questions/68824830/phpstan-configuration-for-fuelphp
+
+■ PHPStanを実行するときのコマンド
+
+fuel-app内に入って↓を叩く
+./fuel/vendor/bin/phpstan analyse ./fuel/app/classes
+
+■ phpstan.neonを通すコマンド
+
+./fuel/vendor/bin/phpstan analyse -c phpstan.neon ./fuel/app/classes

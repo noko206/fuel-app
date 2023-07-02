@@ -1,4 +1,4 @@
 parameters:
-	level: 4
+	level: 9
 	bootstrapFiles:
-		- /var/www/bootstrap_phpstan.php
+		- /var/www/src/bootstrap_phpstan.php
