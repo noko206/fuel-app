@@ -5,7 +5,7 @@ https://qiita.com/Bana7/items/beca2d5a4cbef5b52368
 ■ コマンド
 
 docker-compose build
-docker compose run -u "$(id -u):$(id -g)" --rm app composer create-project fuel/fuel --prefer-dist .
+docker compose run -u "$(id -u):$(id -g)" --rm app composer create-project fuel/fuel --prefer-dist ./tmp
 
 ■ 各種パッケージ
 
@@ -24,3 +24,6 @@ https://zenn.dev/pixiv/articles/00bf49f8ec2f16
 ・PHPStanで大量のエラーが出る
 
 https://blog.logical.co.jp/entry/2021/01/12/100000
+
+こっちが参考になりそう！
+https://stackoverflow.com/questions/68824830/phpstan-configuration-for-fuelphp

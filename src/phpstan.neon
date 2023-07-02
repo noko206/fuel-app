@@ -1,4 +1,4 @@
 parameters:
-	level: 0
+	level: 4
 	bootstrapFiles:
-		- ./fuel/app/bootstrap.php
+		- /var/www/bootstrap_phpstan.php

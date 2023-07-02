@@ -1,12 +1,12 @@
 <?php
 /**
- * Fuel is a fast, lightweight, community driven PHP 5.4+ framework.
+ * Fuel is a fast, lightweight, community driven PHP5 framework.
  *
  * @package    Fuel
- * @version    1.9-dev
+ * @version    1.8
  * @author     Fuel Development Team
  * @license    MIT License
- * @copyright  2010 - 2018 Fuel Development Team
+ * @copyright  2010 - 2016 Fuel Development Team
  * @link       http://fuelphp.com
  */
 
@@ -21,8 +21,10 @@ if (substr(php_sapi_name(), 0, 3) == 'cgi')
 /**
  * Set error reporting and display errors settings.  You will want to change these when in production.
  */
-error_reporting(-1);
+//error_reporting(-1);
+error_reporting(E_ALL & ~E_NOTICE);
 ini_set('display_errors', 1);
+
 
 /**
  * Website document root
@@ -51,7 +53,7 @@ defined('FUEL_START_MEM') or define('FUEL_START_MEM', memory_get_usage());
 // Load in the Fuel autoloader
 if ( ! file_exists(COREPATH.'classes'.DIRECTORY_SEPARATOR.'autoloader.php'))
 {
-	die("No composer autoloader found. Please run composer to install the FuelPHP framework dependencies first!\n\n");
+    die("No composer autoloader found. Please run composer to install the FuelPHP framework dependencies first!\n\n");
 }
 
 // Load in the Fuel autoloader
@@ -61,8 +63,8 @@ class_alias('Fuel\\Core\\Autoloader', 'Autoloader');
 // Boot the app
 require APPPATH.'bootstrap.php';
 
-// Load oil package
-\Package::load('oil');
+// // Load oil package
+// \Package::load('oil');
 
-// Fire up the command line interfact
-\Oil\Command::init($_SERVER['argv']);
+// // Fire up the command line interfact
+// \Oil\Command::init($_SERVER['argv']);
