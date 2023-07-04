@@ -2,7 +2,6 @@
 
 use Fuel\Core\Fieldset;
 use Fuel\Core\Input;
-use Fuel\Core\Validation;
 use Fuel\Core\View;
 
 class Controller_User_Boards extends Controller_User_Base

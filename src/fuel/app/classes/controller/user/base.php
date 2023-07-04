@@ -27,6 +27,7 @@ class Controller_User_Base extends Controller_Hybrid
 	{
 		parent::before();
 
+		// template設定
 		$this->template = View::forge($this->template_path);
 		$this->template->set('header', View::forge($this->header_path));
 		$this->template->set('footer', View::forge($this->footer_path));
