@@ -4,6 +4,8 @@ services:
   app:
     container_name: fuel-app
     build: ./docker/app
+    environment:
+      FUEL_ENV: test
     volumes:
       - ./docker/app/php.ini:/usr/local/etc/php/php.ini
       - ./src:/var/www/src

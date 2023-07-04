@@ -49,3 +49,13 @@ install-php-extensionsを使うことで解決。
 ■ FuelPHPでマイグレーションを使う方法
 
 https://mintaku-blog.net/fuelphp-migration/
+
+■ Authの使い方
+
+https://naoya-ono.com/blog/fuelphp-login/
+
+こっちの方がよさそうかも
+https://qiita.com/yumura_shiho/items/42d0c823f0870f06ef1a
+
+usersテーブルを作成するためのコマンド
+php oil refine migrate --packages=auth
