@@ -63,7 +63,7 @@ class Controller_User_Boards extends Controller_User_Base
 		}
 
 		// 新規掲示板をDBに登録
-		$now = (new DateTime)->format('Y-m-d H:i:s');
+		$now = (new DateTime())->format('Y-m-d H:i:s');
 
 		$insert_data = [
 			'title'       => $post['title'],

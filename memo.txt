@@ -59,3 +59,13 @@ https://qiita.com/yumura_shiho/items/42d0c823f0870f06ef1a
 
 usersテーブルを作成するためのコマンド
 php oil refine migrate --packages=auth
+
+■ phpcs導入
+
+参考：https://zenn.dev/naoki0722/articles/e2181005ca4c5f
+https://tech.012grp.co.jp/entry/code_formatter
+https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-and-folders
+
+composer require --dev friendsofphp/php-cs-fixer
+
+./fuel/vendor/bin/php-cs-fixer fix -v --diff --dry-run
