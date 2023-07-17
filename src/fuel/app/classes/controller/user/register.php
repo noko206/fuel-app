@@ -21,6 +21,6 @@ class Controller_User_Register extends Controller_User_Base
 	 */
 	public function post_index(): void
 	{
-
+		//
 	}
 }
