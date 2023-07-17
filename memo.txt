@@ -73,3 +73,7 @@ composer require --dev friendsofphp/php-cs-fixer
 ■ PHP CodeSniffer 導入
 
 composer require --dev squizlabs/php_codesniffer
+
+テスト
+./fuel/vendor/bin/phpcs --colors --standard=phpcs/ruleset.xml ./fuel/app/classes
+./fuel/vendor/bin/phpcbf --colors --standard=phpcs/ruleset.xml ./fuel/app/classes
