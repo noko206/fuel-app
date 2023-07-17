@@ -33,4 +33,5 @@ desktop.ini
 /fuel/app/config/crypt.php
 
 /fuel/app/config/test/
-/fuel/.php-cs-fixer.cache
+
+.php-cs-fixer.cache
