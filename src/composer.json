@@ -46,7 +46,9 @@
     "scripts": {
         "post-install-cmd": [
             "php oil r install"
-        ]
+        ],
+        "phpcs": "./fuel/vendor/bin/phpcs --standard=phpcs/ruleset.xml",
+        "phpcbf": "./fuel/vendor/bin/phpcbf --standard=phpcs/ruleset.xml"
     },
     "minimum-stability": "stable"
 }
