@@ -33,6 +33,8 @@
 	</rule>
 	<!-- 長い配列構文 (array()) を使用してはいけない -->
 	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+	<!-- 配列が2行以上ある場合、インデントを揃えなければいけない -->
+	<rule ref="Generic.Arrays.ArrayIndent"/>
 	<!-- 代入演算子の配置は揃えなければいけない -->
 	<rule ref="Generic.Formatting.MultipleStatementAlignment"/>
 	<!-- キャストトークンの間にスペースを入れてはいけない -->
